@@ -1,0 +1,17 @@
+{
+	"name": "ladder",
+	"description": "A simple vibe.d server application.",
+	"copyright": "Copyright © 2014, mdudley",
+	"authors": ["mdudley"],
+	"dependencies": {
+		"vibe-d": "~>0.7.19",
+        "dcrypto": ">=1.2.2",
+        "mysql-native" : ">=0.1.0"
+
+    },
+	"versions": ["VibeDefaultMain"],
+    "postGenerateCommands" : [
+        "jsx -x jsx --watch source/js/ public/js/ &",
+        "tools/liveSync.d views public &"
+    ]
+}
