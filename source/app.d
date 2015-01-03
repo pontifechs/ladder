@@ -6,21 +6,21 @@ import vibe.http.server;
 
 import mysql.connection;
 
-
-// API
-import api.Users;
-
+import api.V1;
 
 void setupServer()
 {
 	auto router = new URLRouter;
-	registerRestInterface(router, new UsersAPI());
-    
+    registerRestInterface(router, new V1API(), "api");
+
     // This needs to be last, or it will assume everything is a static file
     router.get("*", serveStaticFiles("public/"));
 
-	std.stdio.writeln(router.getAllRoutes);
-    
+    foreach (route ; router.getAllRoutes)
+    {
+        std.stdio.writeln(route);
+    }
+
     auto settings = new HTTPServerSettings;
 	settings.port = 8080;
 	settings.bindAddresses = ["127.0.0.1"];

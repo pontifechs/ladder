@@ -27,5 +27,3 @@ public static Json setHTTPStatusCode(Json result, HTTPServerRequest request, HTT
     return result;
 }
 
-
-
