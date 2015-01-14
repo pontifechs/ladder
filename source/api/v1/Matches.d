@@ -27,8 +27,7 @@ class MatchesAPI : Matches
 {
 override:
     Json get()
-    {
-        return Json.emptyObject;
+    { return Json.emptyObject;
     }
 
     Json create(User user)

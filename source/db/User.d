@@ -1,6 +1,6 @@
 module db.User;
 
-import mysql.connection; //TODO:: Wrap all the MySQL stuff eventually? IDK.
+import mysql.connection; 
 import db.Common;
 
 

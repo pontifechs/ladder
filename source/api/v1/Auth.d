@@ -26,6 +26,15 @@ class InvalidAuthTokenException : Exception
     }
 }
 
+class AuthTokenExpiredException : Exception
+{
+    import std.string;
+    this(T...)(string msg, T args)
+    {
+        super(format(msg, args));
+    }
+}
+
 struct AuthToken
 {
     import std.datetime;
@@ -47,6 +56,11 @@ struct AuthToken
         this.user = User.byId(authComponents[0].to!(long));
         this.issueTime = SysTime.fromISOString(authComponents[1]);
         this.duration = authComponents[2].to!(long);
+
+        if(!valid())
+        {
+            throw new AuthTokenExpiredException("Auth token expired. Please generate a new one.");
+        }
     }
 
     this(User user, long duration)
@@ -150,5 +164,4 @@ override:
     {
         return get(username, password);
     }
-
 }
