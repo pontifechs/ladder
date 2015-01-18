@@ -11,6 +11,7 @@
 	"versions": ["VibeDefaultMain"],
     "postGenerateCommands" : [
         "jsx -x jsx --watch source/js/ public/js/ &",
-        "cp views/* public/"    
+        "tools/liveSync.d -x js source/js/ public/js/ &",
+        "tools/liveSync.d views/ public/ &"
     ]
 }
