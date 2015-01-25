@@ -6,7 +6,7 @@
 	"dependencies": {
 		"vibe-d": ">=0.7.19",
         "dcrypto": ">=1.2.2",
-        "mysql-native" : ">=0.1.0"
+        "mysql-native" : ">0.1.1"
     },
 	"versions": ["VibeDefaultMain"]
 }
