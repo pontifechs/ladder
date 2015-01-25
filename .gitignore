@@ -3,3 +3,4 @@ dub.selections.json
 public/
 ladder
 __test__library__
+node_modules/

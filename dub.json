@@ -8,8 +8,5 @@
         "dcrypto": ">=1.2.2",
         "mysql-native" : ">=0.1.0"
     },
-	"versions": ["VibeDefaultMain"],
-    "postGenerateCommands" : [
-        "jsx -x jsx --watch source/js/ public/js/ &"
-    ]
+	"versions": ["VibeDefaultMain"]
 }

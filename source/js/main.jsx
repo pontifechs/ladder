@@ -22,7 +22,7 @@ require(['lib/react', 'components/Chat', 'models/User'], function(React, Chat, U
             "message" : "Message three"
         }
     ];
- 
+
     var user = new User();
 
     var userDetails = {
