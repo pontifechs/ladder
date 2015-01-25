@@ -1,24 +1,17 @@
+
 require.config({
-    baseUrl: 'js',
     paths: {
-        jquery: 'lib/jquery-2.1.3',
+        jquery: 'lib/jquery-2.1.3'
     },
-    shim: {
-        "lib/exoskeleton": {
-            deps: ["jquery"],
-            exports: "Backbone"  //attaches "Backbone" to the window object
-        }
-    }
+    
 });
 
 
-
-require(['lib/react', 'components/Chat', 'lib/exoskeleton'], function(React, Chat, Backbone) {
+require(['lib/react', 'components/Chat', 'models/User'], function(React, Chat, User) {
 
     var messages = [
         {
-            "username" : "WHATHOWISTHISNAMESOFREAKINGLONGBob",
-            "message" : "Message one"
+            "username" : "WHATHOWISTHISNAMESOFREAKINGLONGBob", "message" : "Message one"
         },
         {
             "username" : "Sue",
@@ -29,8 +22,20 @@ require(['lib/react', 'components/Chat', 'lib/exoskeleton'], function(React, Cha
             "message" : "Message three"
         }
     ];
-    console.log(Backbone); 
+ 
+    var user = new User();
+
+    var userDetails = {
+        username: 'jaime.steren@sirsidynix.com',
+        password: 'password'
+    };
     
+    user.save(userDetails, {
+        success: function (user) {
+            console.log(user);
+        }
+    })
+
     React.render(<Chat messages={messages}/>, document.getElementById('main-column'));    
 });
 

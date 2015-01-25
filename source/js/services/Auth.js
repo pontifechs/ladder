@@ -1,7 +1,7 @@
 
 
 
-define([], function() {
+define(["lib/exoskeleton"], function(Backbone) {
 
     function Auth() {
         var loggedIn = false;
@@ -16,7 +16,7 @@ define([], function() {
             },
 
             logIn : function(username, password) {
-                
+                    
             }
 
                 

@@ -10,8 +10,6 @@
     },
 	"versions": ["VibeDefaultMain"],
     "postGenerateCommands" : [
-        "jsx -x jsx --watch source/js/ public/js/ &",
-        "tools/liveSync.d -x js source/js/ public/js/ &",
-        "tools/liveSync.d views/ public/ &"
+        "jsx -x jsx --watch source/js/ public/js/ &"
     ]
 }

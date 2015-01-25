@@ -70,7 +70,7 @@ public void handleWebSocketConnection(scope WebSocket socket)
         json.username = "bob";
         json.message = "hey ";
         
-        ChatUser.broadcast(json);
+        //ChatUser.broadcast(json);
     }
 }
 
