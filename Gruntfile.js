@@ -49,7 +49,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-exec');
     grunt.loadNpmTasks('grunt-react');
 
-    grunt.registerTask('rebuild', ['clean', 'copy', 'watch']);
+    grunt.registerTask('rebuild', ['clean', 'copy', 'react', 'watch']);
 }
 
 

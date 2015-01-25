@@ -7,7 +7,7 @@ require.config({
 });
 
 
-require(['lib/react', 'components/Chat', 'models/User'], function(React, Chat, User) {
+require(['lib/react', 'components/Chat'], function(React, Chat, Auth) {
 
     var messages = [
         {
@@ -22,20 +22,6 @@ require(['lib/react', 'components/Chat', 'models/User'], function(React, Chat, U
             "message" : "Message three"
         }
     ];
-
-    var user = new User();
-
-    var userDetails = {
-        username: 'jaime.steren@sirsidynix.com',
-        password: 'password'
-    };
-    
-    user.save(userDetails, {
-        success: function (user) {
-            console.log(user);
-        }
-    })
-
     React.render(<Chat messages={messages}/>, document.getElementById('main-column'));    
 });
 
