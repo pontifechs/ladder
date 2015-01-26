@@ -12,10 +12,13 @@ var ChatLine = React.createClass({
     }
 });
 
-return React.createClass({
-    
-    getInitialState : function() {
-        return {messages : this.props.messages};
+
+var ChatInput = React.createClass({
+    render : function() {
+        return (
+            <input className="chat-input-line" type="text" 
+                   placeholder={!Auth.loggedIn() ? "You must login first." : ""}/>
+        );
     },
 
     componentDidMount : function() {
@@ -28,9 +31,14 @@ return React.createClass({
         var messages = this.state.messages;
         messages.push({username: data.username, message: data.message});
         this.setState({messages: messages});
-        console.log(React);
-        console.log(Auth);
-        console.log(Auth.loggedIn());
+    },
+
+});
+
+return React.createClass({
+    
+    getInitialState : function() {
+        return {messages : this.props.messages};
     },
 
     render : function() {
@@ -45,7 +53,7 @@ return React.createClass({
                 <div className="chat-area">
                     {messages}
                 </div>
-                <input className="chat-input-line" type="text"/>
+                <ChatInput/>
             </div>
         );
     }
