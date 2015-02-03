@@ -1,6 +1,7 @@
 
 
-define(['lib/react', 'components/Chat', 'components/Header'], function(React, Chat, Header) {
+define(['lib/react', 'components/Chat', 'components/Header', 'components/util/TwoColumnLayout', 'components/AvailableGames'], 
+        function(React, Chat, Header, TwoColumnLayout, AvailableGames) {
 
 
     var messages = [
@@ -17,22 +18,34 @@ define(['lib/react', 'components/Chat', 'components/Header'], function(React, Ch
         }
     ];
 
-
-
     var App = React.createClass({
         render: function() {
+
+            var navBar = (
+                <div className="nav-bar">
+                    <div>Links</div>
+                    <div>Links</div>
+                    <div>Links</div>
+                    <div>Links</div>
+                </div>
+            );
+
+            var content = (
+                <TwoColumnLayout leftBody={<Chat messages={messages}/>}
+                                 rightBody={<AvailableGames/>}
+                                 leftWidth={2}
+                                 rightWidth={3}/>
+            );
+
+
             return (
-                <div>
+                <div style={{'height' : '100%;'}}>
                     <Header/>
                     <div id="main-ui">
-                        <div className="two-column-layout">
-                            <div className="left-column">
-                            </div>
-                            <div className="right-column" id="main-column">
-                                <Chat messages={messages}/>                         
-                            </div>
-                            <div className="clear"></div>
-                        </div>
+                        <TwoColumnLayout leftBody={navBar} 
+                                         rightBody={content}
+                                         leftWidth={1}
+                                         rightWidth={12}/>
                     </div>
                 </div>
             );

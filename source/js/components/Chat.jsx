@@ -15,8 +15,12 @@ var ChatLine = React.createClass({
 
 var ChatInput = React.createClass({
     render : function() {
+        var style = {
+            width: '100%',
+        };
+
         return (
-            <input className="chat-input-line" type="text" 
+            <input style={style} type="text" 
                    placeholder={!Auth.loggedIn() ? "You must login first." : ""}/>
         );
     },
@@ -48,9 +52,16 @@ return React.createClass({
             messages.push(<ChatLine username={entry.username} message={entry.message}/>);
         });
 
+        var chatContainerStyle = { 
+            height: '100%',
+        };
+        var chatAreaStyle = { 
+            display: 'table' 
+        };
+
         return (
-            <div>
-                <div className="chat-area">
+            <div style={chatContainerStyle}>
+                <div style={chatAreaStyle}>
                     {messages}
                 </div>
                 <ChatInput/>

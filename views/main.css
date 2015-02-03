@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;   
+    height: 100%;
 }
 
 * {
@@ -9,25 +10,28 @@ html {
 body {
     text-align:center;
     margin:0px;
+    font-family: 'Lato', serif;
+    height: 100%;
 }
 
 #main-ui {
-    width:1000px;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100%;
+    background-color: #F7F7F7;
 }
 
 .header {
     width: 100%;
     height: 40px;
     background-color:#FF6666;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .header .content {
     display: inline-block;
-    vertical-align: center;
+}
+
+.vertical-center {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -44,18 +48,12 @@ body {
     float: right;
 }
 
-.left-column {
-    width: 200px;
+.left-column.nav-bar {
+    background-color:#7777FF;
 }
 
-.right-column {
-    margin-left: 200px;
-    float: left;
-}
-
-.two-column-layout {
-    height: 100%;
-    background-color: #F7F7F7;
+.right-column.content {
+    background-color:#AA5555;
 }
 
 .clear {
@@ -85,12 +83,23 @@ body {
     width: 100%;
 }
 
+.chat-container {
+    min-width: 30%;
+    max-width: 50%;
+}
+
 .chat-area {
     display: table;
-    min-width: 500px;
-    max-width: 800px;
 }
 .chat-input-line {
     display: block;
     width: 100%;
 }
+
+.util-button {
+    width: 100px;
+    height: 25px;
+    background-color:#77FF77;
+}
+
+
